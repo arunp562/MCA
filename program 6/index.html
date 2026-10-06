@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mark and calculate</title>
+        <script>
+            function calculateGrade(){
+                var mark1 = Number(document.getElementById("mark1").value);
+                var mark2 = Number(document.getElementById("mark2").value);
+                var mark3 = Number(document.getElementById("mark3").value);
+
+                var total = mark1 + mark2 + mark3;
+                var average = total/3;
+                var grade;
+
+                if(average >= 90)
+                    grade = "A+";
+                else if(average >= 80)
+                    grade = "A";
+                else if(average >= 70)
+                    grade = "B+";
+                else if(average >= 60)
+                    grade = "B";
+                else if(average >= 50)
+                    grade = "C+";
+                else if(average >= 40)
+                    grade = "D";
+                else 
+                    grade = "F";
+
+                document.getElementById("result").innerHTML = "Total Marks = "+total+"<br>Average = "+average.toFixed(2)+"<br>Grade ="+grade;
+                
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Mark and grade calculator</h1>
+        <br>
+        Mark 1:
+        <input type="text" id="mark1" value="fsff">
+        <br><br>
+        Mark 2:
+        <input type="number" id="mark2">
+        <br><br>
+        Mark 3:
+        <input type="number" id="mark3">
+        <br><br>
+
+        <button onclick="calculateGrade()">Calculate</button>
+        <p id="result"></p>
+    </body>
+</html>
