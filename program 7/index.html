@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>javascript utility functions</title>
+    </head>
+    <body>
+        <h1>Javascript utility program</h1>
+        <script>
+            var str = "web programing";
+            document.write("<h2>String Operations </h2>");
+            document.write("String :"+str+"<br>");
+            document.write("Length :"+str.length+"<br>");
+            document.write("Uppercase :"+str.toUpperCase()+"<br>");
+            document.write("Lowercase :"+str.toLowerCase()+"<br>");
+
+            var subjects = ["HTML","CSS","JavaScript","PHP"];
+
+            document.write("<h2>Array Operation</h2>");
+            document.write("Subjects :"+subjects+"<br>");
+            document.write("First Subjects :"+subjects[0]+"<br>");
+            document.write("Number Of Subjects :"+subjects.length+"<br>");
+
+            document.write("<h2>Math opertion</h2>");
+            document.write("Square root of 25 :"+Math.sqrt(25)+"<br>");
+            document.write("Power :"+Math.pow(2,3)+"<br>");
+            document.write("Random nubmer :"+Math.random()+"<br>");
+
+            var today = new Date();
+
+            document.write("<h2>Date Operation</h2>");
+            document.write("current date and time :"+today+"<br>");
+            document.write("Year :"+today.getFullYear()+"<br>");
+            document.write("Month :"+(today.getMonth()+1)+"<br>");
+
+
+
+        </script>
+    </body>
+</html>

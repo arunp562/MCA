@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript from validation</title>
+        <script>
+            function validateForm() {
+
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var error = document.getElementById("error");
+
+                error.innerHTML = "";
+                console.log("gg")
+                if(name == "arun"){
+                    error.innerHTML = "arun";
+                    return false;
+                }
+
+                if(email == ""){
+                    error.innerHTML = "please enter your email";
+                    return false;
+                }
+
+                if(!email.includes("@")){
+                    error.innerHTML = "please enter valid email";
+                    return false;
+                }
+
+                if(password.length < 6){
+                    error.innerHTML = "password  must contain at least 6 characters";
+                    return false;
+                }
+
+                error.innerHTML = "registration succesfull";
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>regitration form</h1>
+        <form onsubmit="return validateForm()">
+            name:
+            <input type="text" id="name">
+            <br><br>
+            email:
+            <input type="text" name="" id="email">
+            <br><br>
+            password:
+            <input type="password" id="password">
+            <br><br>
+
+            <input type="submit" value="Register">
+            <input type="reset" id="Reset">
+        </form>
+        <br>
+        <p id="error"></p>
+    </body>
+</html>

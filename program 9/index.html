@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM and Event handling</title>
+        <script>
+            function changeBackground(){
+                const randomNumber = Math.floor(Math.random() * 200);
+                const randomNumber2 = Math.floor(Math.random() * 200);
+                const randomNumber3 = Math.floor(Math.random() * 200);
+                document.body.style.backgroundColor = `rgb(${randomNumber}, ${randomNumber2}, ${randomNumber3})`;
+            }
+            function changeText(){         
+                document.getElementById("message").innerHTML = "mouse is over the text";
+            }
+            function restoreText(){
+                document.getElementById("message").innerHTML = "move the mouse over the text";
+            }
+            function changeImage(){
+                document.getElementById("collageImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThHgkULdjMif2tZ67ADFEiJKTW3uwAzLFk7kbl6vwwfg&s=10";
+                document.getElementById("collageImage").width = "700"
+
+
+            }
+            function restoreImage(){
+                document.getElementById("collageImage").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS206IFYn3e8T60Ow_9TM591hYs69FHNqNunrPqoHsqHA&s=10";
+                document.getElementById("collageImage").width = "300"
+            
+            }
+            
+        </script>
+    </head>
+    <body>
+        <img id="collageImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS206IFYn3e8T60Ow_9TM591hYs69FHNqNunrPqoHsqHA&s=10" width="300" alt="" onmouseover="changeImage()" onmouseout="restoreImage()">
+
+
+        <h1>DOM and Event handling</h1>
+        <button onclick="changeBackground()">Change Background</button>
+        <br><br>
+        <h2 id="message" onmouseover="changeText()" onmouseout="restoreText()">Move the mouse over the text</h2>
+
+
+    </body>
+</html>

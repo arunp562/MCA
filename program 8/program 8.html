@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic calender</title>
+        <style>
+            table{
+                border-collapse: collapse;
+                width: 500px;
+            }
+            th,td{
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+            }
+            th{
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Dynamic Calender</h1>
+        Month:
+        <input type="number" id="month" min="1" max="12" >
+        Year :
+        <input type="number" id="year">
+        <button onclick="generateCalender()">Generate Calender</button>
+        <br><br>
+        <div id="calender"></div>
+        <div id="gg"></div>
+
+        <script>
+            function generateCalender(){
+                var month = Number(document.getElementById("month").value);
+                var year = Number(document.getElementById("year").value);
+                var firstDay = new Date(year,month -1,1).getDay();
+                var daysInMonth = new Date(year,month,0).getDate();
+                document.getElementById("gg").innerHTML = firstDay+" "+daysInMonth;
+
+
+                var calender = "<table> <tr> <th>Sun</th>";
+                    calender += "<th>Mon</th>";
+                    calender += "<th>Tue</th>";
+                    calender += "<th>Wed</th>";
+                    calender += "<th>Thu</th>";
+                    calender += "<th>Fri</th>";
+                    calender += "<th>Sat</th>";
+                    calender += "</tr><tr>";
+                        for(var i = 0;i < firstDay; i++){
+                            calender += "<td></td>";
+                        }
+
+                        for(var day = 1;day <= daysInMonth;day++){
+                            calender += "<td>"+day+"</td>";
+                            if((firstDay + day) % 7 == 0 && day < daysInMonth) {
+                                calender += "</tr><tr>"
+                            }
+                        }
+
+                        calender += "</tr>";
+                        calender += "</table>";
+                        document.getElementById("calender").innerHTML = calender;
+
+
+            }
+        </script>
+    </body>
+</html>
